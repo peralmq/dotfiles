@@ -1,3 +1,6 @@
 [submodule ".vim"]
 	path = .vim
 	url = git@github.com:peralmq/vimdotfiles.git
+[submodule "vim"]
+	path = vim
+	url = git@github.com:peralmq/vimdotfiles.git
