@@ -40,11 +40,10 @@ unsetopt correct_all
 # Customize to your needs...
 #export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
 
-for FILE in ~/.wrapp/* ; do source $FILE ; done
 stty -ixoff
 
 for FILE in ~/.zshell/* ; do source $FILE ; done
-for FILE in ~/.shell/* ; do source $FILE ; done
+#for FILE in ~/.shell/* ; do source $FILE ; done
 
 PATH=/usr/local/bin:$PATH
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
