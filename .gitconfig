@@ -1,0 +1,9 @@
+[user]
+	name = Pelle Almquist
+	email = per.almquist@gmail.com
+[credential]
+	helper = osxkeychain
+[core]
+	editor = vim
+[merge]
+	tool = opendiff
