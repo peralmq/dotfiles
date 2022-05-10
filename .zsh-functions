@@ -1,0 +1,36 @@
+function xcode_reset() {
+  xcrun simctl shutdown all
+  xcrun simctl erase all
+  rm -rf ~/Library/Developer/Xcode/DerivedData
+  rm -rf ~/Projects/elsa/app/ios/build
+}
+
+function elsa_dc_reset() {
+  cd ~/Projects/elsa/elsa
+  cd dc
+  rm -rf node_modules
+  cd -
+  cd backend
+  rm -rf node_modules
+  cd -
+  cd api-client
+  rm -rf node_modules
+  cd -
+  xcrun simctl shutdown all
+  xcrun simctl erase all
+
+  rm -rf ~/Library/Developer/Xcode/DerivedData
+  watchman watch-del-all
+  rm -rf $TMPDIR/metro-*
+  rm -rf $TMPDIR/haste-map-metro-*
+  rm -rf $TMPDIR/react-*
+
+  yarn install-all-ios
+}
+
+function aws_sso_and_set_env_variables() {
+  unset AWS_PROFILE
+  export AWS_PROFILE=$1
+  aws sts get-caller-identity &> /dev/null || aws sso login || (unset AWS_PROFILE && aws-configure-sso-profile --profile $1)
+  eval $(aws-export-credentials --env-export)
+}

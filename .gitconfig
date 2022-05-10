@@ -1,5 +1,5 @@
 [user]
-	name = Pelle Almquist
+	name = Pelle Frank
 	email = per.almquist@gmail.com
 [credential]
 	helper = osxkeychain
@@ -7,3 +7,13 @@
 	editor = vim
 [merge]
 	tool = opendiff
+[mergetool "vscode"]
+  cmd = code --wait $MERGED
+[diff]
+  tool = vscode
+[difftool "vscode"]
+  cmd = code --wait --diff $LOCAL $REMOTE
+[alias]
+	opendiff = difftool --no-prompt --tool opendiff --dir-diff
+[pull]
+	ff = only
