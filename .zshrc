@@ -11,28 +11,32 @@ zgenom autoupdate
 # use zgenom reset to delete init.zsh
 # zgenom reset
 if ! zgenom saved; then
-
   zgenom prezto editor key-bindings 'vi'
   zgenom prezto editor dot-expansion 'yes'
-  zgenom prezto prompt theme 'sorin'
+  zgenom prezto prompt theme 'pure'
   zgenom prezto
 
-  zgenom prezto git
   zgenom prezto docker
+  zgenom prezto git
   zgenom prezto homebrew
+  zgenom prezto node
   zgenom prezto python
-  zgenom prezto tmux
   zgenom prezto ssh
+  zgenom prezto history-substring-search
+
+  zgenom oh-my-zsh plugins/aws
 
   # zgenom load zsh-users/zsh-autosuggestions
   zgenom load zsh-users/zsh-syntax-highlighting
+  # zgenom load zsh-users/zsh-completions
   # zgenom load marlonrichert/zsh-autocomplete
   zgenom load mafredri/zsh-async
-  zgenom load ~/.gitaliases
   zgenom load ~/.zsh-functions
   zgenom load ~/.zshenv
+  zgenom load ~/.gitaliases
+  zgenom load ~/.deno/env
 
- zgenom save
+  zgenom save
 fi
 
 
@@ -44,5 +48,7 @@ bindkey -e # Extra keybindings
 HISTSIZE=999999999
 SAVEHIST=$HISTSIZE
 
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
 
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

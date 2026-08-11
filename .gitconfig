@@ -7,6 +7,7 @@
 	editor = vim
 [merge]
 	tool = opendiff
+	ff = false
 [mergetool "vscode"]
   cmd = code --wait $MERGED
 [diff]
@@ -17,3 +18,8 @@
 	opendiff = difftool --no-prompt --tool opendiff --dir-diff
 [pull]
 	ff = only
+	rebase = true
+[color]
+	ui = true
+[includeIf "gitdir:~/Projects/nentgroup/"]
+	path = ~/.gitconfig-work
