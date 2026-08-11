@@ -87,12 +87,16 @@ cask "iterm2"
 cask "karabiner-elements"
 # Email client
 cask "microsoft-outlook"
+# Software for live streaming and screen recording
+cask "obs"
 # Whisper dictation/transcription app
 cask "opensuperwhisper"
 # Move and resize windows using keyboard shortcuts or snap areas
 cask "rectangle"
 # Plugin for AWS CLI to start and end sessions that connect to managed instances
 cask "session-manager-plugin"
+# Team communication and collaboration software
+cask "slack"
 # Music streaming service
 cask "spotify"
 # Messaging app with a focus on speed and security
